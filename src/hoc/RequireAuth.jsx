@@ -4,7 +4,7 @@ import { useAuth } from "../hook/useAuth";
 
 export const RequireAuth = ({ children }) => {
   const location = useLocation();
-  console.log(location)
+ 
   const { user } = useAuth();
 
   if (!user) {

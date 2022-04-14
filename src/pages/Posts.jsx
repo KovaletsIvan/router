@@ -8,7 +8,7 @@ import { capitalize } from "../getaway";
 export const Posts = () => {
   const [posts, setPosts] = useState([]);
   const { singout } = useAuth();
-  console.log(useAuth())
+
   const navigation = useNavigate();
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")

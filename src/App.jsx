@@ -4,26 +4,41 @@ import {
   Home,
   About,
   Posts,
-  Layout,
   Singlepage,
   NotFound,
-} from "./components/index";
+  LoginPage,
+} from "./pages/index";
+
+import Layout from "./components/Layout";
+
+import RequireAuth from "./hoc/RequireAuth";
+import  AuthProvider  from "./hoc/AuthProvider";
 
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about/" element={<About />} />
-          <Route path="posts" element={<Posts />} />
-          <Route path="posts/:id" element={<Singlepage />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </>
+   
+       <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about/" element={<About />} />
+            <Route
+              path="posts"
+              element={
+                <RequireAuth>
+                  <Posts />
+                </RequireAuth>
+              }
+            />
+            <Route path="posts/:id" element={<Singlepage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+       </AuthProvider> 
+    
   );
 }
 

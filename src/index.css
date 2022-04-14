@@ -41,3 +41,54 @@ body {
   background-color: cadetblue;
   color: azure;
 }
+.logginpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+}
+.log-title {
+  color: #145a32;
+}
+.label {
+  font-size: 20px;
+  color: #145a32;
+}
+.login-btn {
+  display: inline-block;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 4px;
+  border: none;
+  color: cadetblue;
+  background-color: beige;
+}
+.login-btn:hover {
+  background-color: cadetblue;
+  color: azure;
+}
+.login-input {
+  font-size: 20px;
+}
+.logout-btn {
+  display: inline-block;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 4px;
+  border: none;
+  color: cadetblue;
+  background-color: beige;
+  margin-bottom: 20px;
+}
+.logout-btn:hover {
+  background-color: cadetblue;
+  color: azure;
+}
